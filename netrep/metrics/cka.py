@@ -58,7 +58,7 @@ class LinearCKA:
             X_at_Y = hsic.score(X, Y, mode = mode)
             X_at_X = hsic.score(X, X, mode = mode)
             Y_at_Y = hsic.score(Y, Y, mode = mode)
-            return X_at_Y/(X_at_X * Y_at_Y)
+            return X_at_Y/np.sqrt(X_at_X * Y_at_Y)
         
         else:
             raise ValueError(f'mode {mode} does not exist')
